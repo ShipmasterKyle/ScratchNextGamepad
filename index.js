@@ -119,7 +119,7 @@ class ScratchGamepad {
             "blocks": [{
                         "opcode": "buttonPressedReleased",
                         "blockType": "hat",
-                        "text": "button [b] [pr] of pad [i]",
+                        "text": "button # [b] [pr] of gamepad [i]",
                         "arguments": {
                             "b": {
                                 "type": "number",
@@ -140,7 +140,7 @@ class ScratchGamepad {
                     {
                         "opcode": "buttonDown",
                         "blockType": "Boolean",
-                        "text": "button [b] of pad [i] is down",
+                        "text": "button# [b] of gamepad [i] is down",
                         "arguments": {
                             "b": {
                                 "type": "number",
@@ -156,7 +156,7 @@ class ScratchGamepad {
                     {
                         "opcode": "axisMoved",
                         "blockType": "hat",
-                        "text": "axis [b] of pad [i] moved",
+                        "text": "anolog axis [b] of gamepad [i] moved",
                         "arguments": {
                             "b": {
                                 "type": "number",
