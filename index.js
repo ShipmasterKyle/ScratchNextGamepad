@@ -101,17 +101,6 @@ class SingleGamepad {
         else
             return false
     }
-    
-    rumble(s,w,t) {
-        var gamepad = this.gamepads[i].getGamepad()
-        if (gamepad != null && gamepad.vibrationActuator) {
-            gamepad.vibrationActuator.playEffect("dual-rumble", {
-                duration: 1000*t,
-                strongMagnitude: Math.max(0,Math.min(s,1)),
-                weakMagnitude: Math.max(0,Math.min(w,1))
-            });
-        }
-    }
 }
 
 class ScratchGamepad {
@@ -196,30 +185,7 @@ class ScratchGamepad {
                             },
                         },                    
                     },
-                    {
-                        "opcode": "rumble",
-                        "blockType": "command",
-                        "text": "rumble strong [s] and weak [w] for [t] sec. on pad [i]",
-                        "arguments": {
-                            "s": {
-                                "type": "number",
-                                "defaultValue": "0.25"
-                            },
-                            "w": {
-                                "type": "number",
-                                "defaultValue": "0.5"
-                            },
-                            "t": {
-                                "type": "number",
-                                "defaultValue": "0.25"
-                            },
-                            "i": {
-                                "type": "number",
-                                "defaultValue": "1",
-                                "menu": "padMenu"
-                            },
-                        },                    
-                    },
+                  
             ],
             "menus": {
                 "pressReleaseMenu": [{text:"press",value:1}, {text:"release",value:0}],
@@ -245,10 +211,6 @@ class ScratchGamepad {
     
     buttonDown({b,i}) {
         return this.gamepads[i-1].getButton(this.runtime.currentMSecs,b-1)
-    }
-    
-    rumble({s,w,t,i}) {
-        this.gamepads[i-1].rumble(s,w,t)
     }
 }
 
