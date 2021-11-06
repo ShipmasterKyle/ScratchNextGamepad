@@ -115,7 +115,7 @@ class ScratchGamepad {
     getInfo() {
         return {
             "id": "Gamepad",
-            "name": "Gamepad",
+            "name": "ScratchNext Gamepad",
             "blocks": [{
                         "opcode": "buttonPressedReleased",
                         "blockType": "hat",
